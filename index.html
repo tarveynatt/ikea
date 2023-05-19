@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网页表格模板</title>
     <style>
+        /* 电脑视图样式 */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        /* 媒体查询：手机视图样式 */
+        @media only screen and (max-width: 600px) {
+            table {
+                font-size: 14px;
+            }
+        }
         /* 样式表，用于美化表格和图片 */
         table {
             border-collapse: collapse;
