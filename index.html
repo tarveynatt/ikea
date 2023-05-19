@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>网页表格模板</title>
+    <style>
+        /* 样式表，用于美化表格和图片 */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        img {
+            max-width: 200px;
+            max-height: 200px;
+            cursor: pointer;
+        }
+        
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        #modal-content {
+            margin: auto;
+            display: block;
+            max-width: 800px;
+            max-height: 800px;
+        }
+        
+        #modal-content img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>标题1</th>
+                <th>标题2</th>
+                <th>标题3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>文本内容1</td>
+                <td>文本内容2</td>
+                <td><img src="bupt.jpg" onclick="openModal('bupt.jpg')" alt="图片1"></td>
+            </tr>
+            <tr>
+                <td>文本内容3</td>
+                <td>文本内容4</td>
+                <td><img src="bupt.jpg" onclick="openModal('bupt.jpg')" alt="图片2"></td>
+            </tr>
+            <!-- 在这里添加更多表格行 -->
+        </tbody>
+    </table>
+    
+    <div id="modal">
+        <span onclick="closeModal()" style="color: #fff; float: right; font-size: 28px; font-weight: bold; padding-right: 10px; cursor: pointer;">&times;</span>
+        <img id="modal-content">
+    </div>
+
+    <script>
+        // JavaScript代码，用于实现图片点击查看大图功能
+        function openModal(imagePath) {
+            var modal = document.getElementById('modal');
+            var modalImg = document.getElementById('modal-content');
+            modal.style.display = "block";
+            modalImg.src = imagePath;
+        }
+        
+        function closeModal() {
+            var modal = document.getElementById('modal');
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
