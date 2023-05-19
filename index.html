@@ -80,17 +80,21 @@
     </div>
 
     <script>
-        // JavaScript代码，用于实现图片点击查看大图功能
+        // JavaScript代码，用于实现图片点击查看大图功能和点击任意位置关闭大图功能
         function openModal(imagePath) {
             var modal = document.getElementById('modal');
             var modalImg = document.getElementById('modal-content');
             modal.style.display = "block";
             modalImg.src = imagePath;
+            modal.onclick = function() {
+                closeModal();
+            };
         }
         
         function closeModal() {
             var modal = document.getElementById('modal');
             modal.style.display = "none";
+            modal.onclick = null;
         }
     </script>
 </body>
